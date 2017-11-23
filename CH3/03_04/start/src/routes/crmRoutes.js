@@ -10,9 +10,11 @@ const routes = (app) => {
     }, (req, res, next) => {
         res.send('GET request successfull!!!');
     })
-    
-    .post((req, res) =>
-    res.send('POST request successfull!!!'));
+
+    // .post((req, res) =>
+    // res.send('POST request successfull!!!'));
+
+    .post(addNewContact);
 
     app.route('/contact/:contactId')
     .put((req, res) =>
