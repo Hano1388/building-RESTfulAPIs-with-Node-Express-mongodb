@@ -38,5 +38,14 @@ export const updateContact = (req, res) => {
             res.send(err);
         }
         res.json(contact);
-    })
-}
+    });
+};
+
+export const deleteContact = (req, res) => {
+  Contact.remove({ _id: req.params.contactId }, (err) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send(`Successfully deleted ${req.body.firstName}'s document from crm Collection`);
+  });
+};
